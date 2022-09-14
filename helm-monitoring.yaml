@@ -1,0 +1,33 @@
+HELM Commands
+Helm Install
+
+helm install kube-prometheus-stack prometheus-community/kube-prometheus-stack --namespace monitoring --values
+
+helm install kube-prometheus-stack ./kube-prometheus-stack --namespace monitoring --values
+
+helm install blackbox-exporter prometheus-community/prometheus-blackbox-exporter -n monitoring
+
+helm install x509-certificate-exporter enix/x509-certificate-exporter -n monitoring --values
+
+helm install redis-exporter prometheus-community/prometheus-redis-exporter -n monitoring --values
+
+helm install rabbitmq-exporter prometheus-community/prometheus-rabbitmq-exporter -n monitoring --values 
+
+helm install loki-stack grafana/loki-stack -n monitoring --values 
+
+Helm Upgrade
+
+helm upgrade kube-prometheus-stack prometheus-community/kube-prometheus-stack --namespace monitoring --values
+
+helm upgrade kube-prometheus-stack ./kube-prometheus-stack --namespace monitoring --values
+Helm Pull
+
+helm pull prometheus-community/kube-prometheus-stack
+Helm Repo List
+helm repo add stable https://charts.helm.sh/stable
+
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+
+helm repo add enix https://charts.enix.io
+
+helm repo add grafana https://grafana.github.io/helm-charts
